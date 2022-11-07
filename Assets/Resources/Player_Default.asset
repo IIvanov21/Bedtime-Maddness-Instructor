@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab47ff7486b6c334ab169e916d42c544, type: 3}
+  m_Name: Player_Default
+  m_EditorClassIdentifier: 
+  actorName: Player
+  actorType: 0
+  description: Default baby player.
+  health: 0
+  speed: 20
+  hitPower: 1
+  score: 0
+  actor: {fileID: 4206809875157627283, guid: 0018f0eb869b18e4e9ab7d3a1b40555e, type: 3}
+  actorBullets: {fileID: 2859177707197536453, guid: 8c45bd50d80bfbf4abcc01b77f013117, type: 3}
