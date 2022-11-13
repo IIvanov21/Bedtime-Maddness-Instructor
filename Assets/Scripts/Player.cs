@@ -13,6 +13,11 @@ public class Player : MonoBehaviour, IActorTemplate
     [SerializeField]
     GameObject shootPoint;
 
+
+    //Particle System
+    [SerializeField]
+    ParticleSystem particleSystem;
+    bool playParticles = false;
     //Provide access to our health and fire object 
     public int Health
     {
@@ -28,6 +33,7 @@ public class Player : MonoBehaviour, IActorTemplate
 
     GameObject _Player;
 
+
     //Capture movement inputs
     float horizontalInput;
     float verticalInput;
@@ -41,9 +47,10 @@ public class Player : MonoBehaviour, IActorTemplate
     {
         //Movement
         Move();
-
+        ControlParticleSystems();
         //Attack
         Attack();
+
     }
 
     public void ActorStats(SOActorModel actorModel)
@@ -112,5 +119,11 @@ public class Player : MonoBehaviour, IActorTemplate
             GameObject bullet = GameObject.Instantiate(fire, shootPoint.transform.position, shootPoint.transform.rotation) as GameObject;
             bullet.transform.SetParent(_Player.transform);
         }
+    }
+
+    void ControlParticleSystems()
+    {
+        if(horizontalInput == 0 && verticalInput == 0) particleSystem.Stop();
+        else if(!particleSystem.isPlaying)  particleSystem.Play();
     }
 }
