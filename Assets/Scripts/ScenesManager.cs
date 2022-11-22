@@ -37,4 +37,15 @@ public class ScenesManager : MonoBehaviour
     {
         SceneManager.LoadScene("test");
     }
+
+    public void MainScene()
+    {
+        SceneManager.LoadScene((int)Scenes.title);
+    }
+
+    //Quit Game Method
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

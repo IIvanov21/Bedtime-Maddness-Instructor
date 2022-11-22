@@ -14,14 +14,19 @@ public class PlayerBullet : MonoBehaviour, IActorTemplate
     [SerializeField]
     SOActorModel bulletModel;
 
+    AudioSource audioSource;
+
     void Awake()
     {
         ActorStats(bulletModel);
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         transform.position += transform.forward*speed * Time.deltaTime;  
+
+        audioSource.pitch = Random.Range(0.0f, 2.5f);
     }
 
     public void ActorStats(SOActorModel actorModel)
