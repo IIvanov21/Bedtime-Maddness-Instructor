@@ -547,6 +547,34 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7852487127374917243, guid: 804645ea591a61e43967a16be3674ee2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852487127374917243, guid: 804645ea591a61e43967a16be3674ee2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852487127374917243, guid: 804645ea591a61e43967a16be3674ee2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1031802108}
+    - target: {fileID: 7852487127374917243, guid: 804645ea591a61e43967a16be3674ee2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852487127374917243, guid: 804645ea591a61e43967a16be3674ee2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: WatchAd
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852487127374917243, guid: 804645ea591a61e43967a16be3674ee2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AdManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852487127374917243, guid: 804645ea591a61e43967a16be3674ee2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7852487127438252787, guid: 804645ea591a61e43967a16be3674ee2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
