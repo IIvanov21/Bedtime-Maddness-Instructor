@@ -48,4 +48,17 @@ public class ScenesManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void NextLevel()
+    {
+        switch (GameManager.currentScene)
+        {
+            case 2: case 3: case 4:
+            case 5:
+                {
+                    SceneManager.LoadScene(GameManager.currentScene + 1);
+                    break;
+                }
+        }
+    }
 }

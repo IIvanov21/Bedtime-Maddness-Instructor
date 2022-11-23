@@ -286,7 +286,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186426931563320040}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: e6b661236f75196488405ddec4c36fdb, type: 3}
   m_Controller: {fileID: 9100000, guid: 49b456880a1ee7747b4b5bdbe2708206, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -931,6 +931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootPoint: {fileID: 7581017666204841878}
   particleSystem: {fileID: 9156208263416041909}
+  jumpFactor: 10
 --- !u!54 &1985406984390162061
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -33,7 +33,9 @@ public class Player : MonoBehaviour, IActorTemplate
 
     GameObject _Player;
 
-
+    Rigidbody rb;
+    [SerializeField,Range(0,20)]
+    float jumpFactor;
     //Capture movement inputs
     float horizontalInput;
     float verticalInput;
@@ -41,6 +43,7 @@ public class Player : MonoBehaviour, IActorTemplate
     void Start()
     {
         _Player = GameObject.Find("_Player");
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -50,7 +53,8 @@ public class Player : MonoBehaviour, IActorTemplate
         ControlParticleSystems();
         //Attack
         Attack();
-
+        //Simple Jump - needs checks for multiple presses
+        Jump();
     }
 
     public void ActorStats(SOActorModel actorModel)
@@ -125,5 +129,14 @@ public class Player : MonoBehaviour, IActorTemplate
     {
         if(horizontalInput == 0 && verticalInput == 0) particleSystem.Stop();
         else if(!particleSystem.isPlaying)  particleSystem.Play();
+    }
+
+    void Jump()
+    {
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            rb.AddForce(Vector3.up * jumpFactor, ForceMode.Impulse);
+        }
     }
 }
