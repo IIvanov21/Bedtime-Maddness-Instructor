@@ -22,4 +22,6 @@ public class ScoreManager : MonoBehaviour
     {
         playerScore = 0;
     }
+
+
 }

@@ -76,7 +76,8 @@ public class Player : MonoBehaviour, IActorTemplate
             {
                 health += collider.GetComponent<IActorTemplate>().SendDamage();
                 GameManager.playerHealth = health;
-                GameManager.Instance.LifeSystemTracker();
+                //GameManager.Instance.LifeSystemTracker();
+                LevelUI.onLifeUpdate?.Invoke();
             }
             //If health reaches zero after the hit we die
             if (health >= 100) Die();

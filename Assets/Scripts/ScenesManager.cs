@@ -35,7 +35,7 @@ public class ScenesManager : MonoBehaviour
     //lets load our test level
     public void BeginGame()
     {
-        SceneManager.LoadScene("test");
+        SceneManager.LoadScene((int)Scenes.waveOne);
     }
 
     public void MainScene()

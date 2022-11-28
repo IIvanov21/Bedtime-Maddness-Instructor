@@ -53,7 +53,8 @@ public class SmallTeddyBear : MonoBehaviour, IActorTemplate
 
             GameManager.Instance.GetComponent<ScoreManager>().SetScore(score);
             Debug.Log("Player's Score: " + GameManager.Instance.GetComponent<ScoreManager>().PlayerScore);
-            GameManager.Instance.ScoreSystem();
+            //GameManager.Instance.ScoreSystem();
+            LevelUI.onScoreUpdate?.Invoke();
         }
     }
 }

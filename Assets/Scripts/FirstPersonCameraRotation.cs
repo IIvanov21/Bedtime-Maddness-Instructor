@@ -16,18 +16,11 @@ public class FirstPersonCameraRotation : MonoBehaviour
 	[SerializeField]
 	GameObject mainCamera;
 
-	bool captureMouse=true;
 
 	public float mouseSensitivity = 500.0f;
 
 	float xRotation = 0.0f;
 
-    private void Start()
-    {
-		Cursor.visible = false;
-		Cursor.lockState = CursorLockMode.Locked;
-
-	}
 
 	void Update()
 	{
@@ -40,22 +33,7 @@ public class FirstPersonCameraRotation : MonoBehaviour
 		transform.Rotate(Vector3.up * mouseX);
 		mainCamera.transform.localRotation=Quaternion.Euler(xRotation, 0.0f, 0.0f);
 
-		if (Input.GetKeyDown(KeyCode.Escape)) CaptureMouse();
 	}
 
-	public void CaptureMouse()
-	{
-		captureMouse = !captureMouse;
-
-		if (captureMouse)
-		{
-			Cursor.visible = false;
-			Cursor.lockState = CursorLockMode.Locked;
-		}
-		else 
-		{
-			Cursor.visible = true;
-			Cursor.lockState = CursorLockMode.Confined;
-		}
-	}
+	
 }

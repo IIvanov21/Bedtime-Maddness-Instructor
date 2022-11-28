@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using TMPro;
+
 public class GameManager : MonoBehaviour
 {
     static GameManager instance;
@@ -25,39 +24,22 @@ public class GameManager : MonoBehaviour
 
     public static int playerHealth=0;
 
-    //UI Elements
-    [SerializeField]
-    Slider playerHealthSlider;
-
-    [SerializeField]
-    TMP_Text scoreText;
-
-    [SerializeField]
-    GameObject pauseMenu;
-
-    bool isPaused = false;
 
     private void Awake()
     {
         CheckGamanager();
         currentScene = SceneManager.GetActiveScene().buildIndex;
-        LightSetup(currentScene);
+        //LightSetup(currentScene);
 
     }
 
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            PauseGame();
-        }
-    }
+   
 
     //Camera settings
     void CameraSetup()
@@ -104,38 +86,7 @@ public class GameManager : MonoBehaviour
         else Destroy(this.gameObject);
     }
 
-    public void LifeSystemTracker()
-    {
-        if (playerHealth < 100)//Simulate we have been hit
-        {
-            Debug.Log("Player's current suffocation is:" + playerHealth + "%!");
-            playerHealthSlider.value = playerHealth;
-        }
-        else//Simulate we die
-        {
-            Debug.Log("Player's current suffocation is:" + playerHealth + "%! We are dead!");
-            playerHealthSlider.value = playerHealth;
-            GetComponent<ScenesManager>().GameOver();
-
-        }
-
-    }
-
-    public void ScoreSystem()
-    {
-        scoreText.text = "Score: " + GetComponent<ScoreManager>().PlayerScore;
-    }
-
-    public void PauseGame()
-    {
-        isPaused = !isPaused;
-        
-        pauseMenu.SetActive(isPaused);
-
-        if(isPaused)Time.timeScale = 0;
-        else Time.timeScale = 1;
-
-    }
+ 
 
 
 }

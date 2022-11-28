@@ -16,7 +16,7 @@ MonoBehaviour:
   actorType: 0
   description: Default baby player.
   health: 0
-  speed: 20
+  speed: 10
   hitPower: 1
   score: 0
   actor: {fileID: 4206809875157627283, guid: 0018f0eb869b18e4e9ab7d3a1b40555e, type: 3}
