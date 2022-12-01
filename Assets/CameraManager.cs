@@ -10,8 +10,13 @@ public class CameraManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cameraOne.rect= new Rect(0,0,0.5f,1);
-        camerTwo.rect= new Rect(0.5f,0,0.5f,1);
+        //Vertical example
+        cameraOne.rect= new Rect(0,0,Screen.width/2,Screen.height);
+        camerTwo.rect= new Rect(0.5f,0,Screen.width/2,Screen.height);
+
+        //Horizontal example
+        cameraOne.rect = new Rect(0, 0, Screen.width, Screen.height/2);
+        camerTwo.rect = new Rect(0, 0.5f, Screen.width, Screen.height/2);
     }
 
     // Update is called once per frame
