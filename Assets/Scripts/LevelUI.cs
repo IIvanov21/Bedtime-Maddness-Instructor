@@ -22,6 +22,7 @@ public class LevelUI : MonoBehaviour
     public static OnScoreUpdate onScoreUpdate;
     public delegate void OnLifeUpdate();
     public static OnLifeUpdate onLifeUpdate;
+
     private void Start()
     {
         onScoreUpdate = ScoreSystem;

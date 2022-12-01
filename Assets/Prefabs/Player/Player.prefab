@@ -1145,7 +1145,7 @@ GameObject:
   - component: {fileID: 1184772531865339946}
   - component: {fileID: 6217511029407950282}
   m_Layer: 0
-  m_Name: Minimap
+  m_Name: Minimap Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
