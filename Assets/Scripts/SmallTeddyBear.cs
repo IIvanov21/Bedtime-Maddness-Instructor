@@ -18,7 +18,10 @@ public class SmallTeddyBear : MonoBehaviour, IActorTemplate
     // Update is called once per frame
     void Update()
     {
-        
+        if (GameManager.State == GameState.Play)
+        {
+            
+        }
     }
 
     public void ActorStats(SOActorModel actorModel)

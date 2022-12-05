@@ -68,9 +68,23 @@ public class LevelUI : MonoBehaviour
 
         pauseMenu.SetActive(isPaused);
 
-        if (isPaused) Time.timeScale = 0;
-        else Time.timeScale = 1;
+        if (isPaused)
+        {
+            Time.timeScale = 0;
+            GameManager.State = GameState.Pause;
+            AudioListener.pause = true;
+        }
+        else
+        {
+            GameManager.State = GameState.Play;
+            Time.timeScale = 1;
+            AudioListener.pause = false;
+        }
 
         CursorManager.cursorDelegate?.Invoke(isPaused);
+
+        
     }
+
+    
 }

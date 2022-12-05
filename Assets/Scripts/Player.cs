@@ -48,13 +48,16 @@ public class Player : MonoBehaviour, IActorTemplate
 
     void Update()
     {
-        //Movement
-        Move();
-        ControlParticleSystems();
-        //Attack
-        Attack();
-        //Simple Jump - needs checks for multiple presses
-        Jump();
+        if (GameManager.State == GameState.Play)
+        {
+            //Movement
+            Move();
+            ControlParticleSystems();
+            //Attack
+            Attack();
+            //Simple Jump - needs checks for multiple presses
+            Jump();
+        }
     }
 
     public void ActorStats(SOActorModel actorModel)

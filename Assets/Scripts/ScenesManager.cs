@@ -36,6 +36,7 @@ public class ScenesManager : MonoBehaviour
     public void BeginGame()
     {
         SceneManager.LoadScene((int)Scenes.waveOne);
+        GameManager.State = GameState.Play;
     }
 
     public void MainScene()

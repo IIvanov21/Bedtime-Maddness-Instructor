@@ -7,7 +7,7 @@ public class ChangeLevel : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && GameManager.State==GameState.Play)
         {
             GameManager.Instance.GetComponent<ScenesManager>().NextLevel();
         }

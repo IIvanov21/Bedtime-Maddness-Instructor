@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -6007791689185659005}
   - component: {fileID: -3203947860947368055}
   - component: {fileID: -8598587942296202014}
+  - component: {fileID: 5050997401468598307}
   m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: Player
@@ -201,7 +202,7 @@ AudioSource:
   m_GameObject: {fileID: 2859177707197536453}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2995220372795192881, guid: 0ba2cc86966ad674a9131485d6c8c59b, type: 2}
   m_audioClip: {fileID: 8300000, guid: e94aeb5176b91784fbedae4ff3f197d7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -360,3 +361,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5050997401468598307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2859177707197536453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}

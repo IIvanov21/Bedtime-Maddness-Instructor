@@ -24,6 +24,14 @@ public class GameManager : MonoBehaviour
 
     public static int playerHealth=0;
 
+    
+
+    private static GameState state = GameState.None;
+    public static GameState State
+    {
+        get { return state; }
+        set { state = value; }
+    }
 
     private void Awake()
     {
@@ -89,4 +97,12 @@ public class GameManager : MonoBehaviour
  
 
 
+}
+
+public enum GameState
+{
+    None,
+    Play,
+    Pause,
+    Stop
 }
