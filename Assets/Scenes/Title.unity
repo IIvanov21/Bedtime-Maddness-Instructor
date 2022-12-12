@@ -405,6 +405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 71747071}
   - component: {fileID: 71747072}
+  - component: {fileID: 71747073}
   m_Layer: 5
   m_Name: MainMenuButtons
   m_TagString: Untagged
@@ -462,6 +463,27 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &71747073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71747070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed8ae55127b9b248bc451320bc20c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 0ba2cc86966ad674a9131485d6c8c59b, type: 2}
+  master: {fileID: 1520826522}
+  music: {fileID: 317073147}
+  ambient: {fileID: 760891370}
+  player: {fileID: 530085218}
+  masterText: {fileID: 2100898741}
+  musicText: {fileID: 1440260579}
+  ambientText: {fileID: 638788052}
+  playerText: {fileID: 1673957937}
 --- !u!1 &74933707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,7 +1857,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 717408694}
   m_Direction: 0
   m_MinValue: -80
-  m_MaxValue: 20
+  m_MaxValue: 0
   m_WholeNumbers: 1
   m_Value: -80
   m_OnValueChanged:
@@ -2910,7 +2932,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1023431155}
   m_Direction: 0
   m_MinValue: -80
-  m_MaxValue: 20
+  m_MaxValue: 0
   m_WholeNumbers: 1
   m_Value: -80
   m_OnValueChanged:
@@ -3699,7 +3721,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2063360774}
   m_Direction: 0
   m_MinValue: -80
-  m_MaxValue: 20
+  m_MaxValue: 0
   m_WholeNumbers: 1
   m_Value: -80
   m_OnValueChanged:
@@ -7161,7 +7183,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1581980420}
   m_Direction: 0
   m_MinValue: -80
-  m_MaxValue: 20
+  m_MaxValue: 0
   m_WholeNumbers: 1
   m_Value: -80
   m_OnValueChanged:
@@ -9901,7 +9923,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2092046196}
   - component: {fileID: 2092046198}
-  - component: {fileID: 2092046197}
   m_Layer: 5
   m_Name: Sound Settings
   m_TagString: Untagged
@@ -9934,27 +9955,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -64}
   m_SizeDelta: {x: 800, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2092046197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092046195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ed8ae55127b9b248bc451320bc20c8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 0ba2cc86966ad674a9131485d6c8c59b, type: 2}
-  master: {fileID: 1520826522}
-  music: {fileID: 317073147}
-  ambient: {fileID: 760891370}
-  player: {fileID: 530085218}
-  masterText: {fileID: 2100898741}
-  musicText: {fileID: 1440260579}
-  ambientText: {fileID: 638788052}
-  playerText: {fileID: 1673957937}
 --- !u!114 &2092046198
 MonoBehaviour:
   m_ObjectHideFlags: 0

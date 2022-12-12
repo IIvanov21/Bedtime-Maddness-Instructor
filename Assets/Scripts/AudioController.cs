@@ -20,35 +20,43 @@ public class AudioController : MonoBehaviour
         music.onValueChanged.AddListener(delegate { SetMusicSound(); });
         ambient.onValueChanged.AddListener(delegate { SetAmbientSound(); });
         player.onValueChanged.AddListener(delegate { SetPlayerSound(); });
-
     }
 
     public void SetMasterSound()
     {
         audioMixer.SetFloat("Master", master.value);
-        float percentage = ((-80.0f-master.value)/(-80.0f-20.0f))*100; 
+        float percentage = ((-80.0f-master.value)/(-80.0f))*100; 
         masterText.text = percentage.ToString();
+        //Master value
+        PlayerPrefs.SetFloat("masterVolume", master.value);
+        PlayerPrefs.Save();
     }
 
     public void SetAmbientSound()
     {
         audioMixer.SetFloat("AmbientSound", ambient.value);
-        float percentage = ((-80.0f - ambient.value) / (-80.0f - 20.0f)) * 100;
+        float percentage = ((-80.0f - ambient.value) / (-80.0f)) * 100;
         ambientText.text = percentage.ToString();
+        PlayerPrefs.SetFloat("ambientVolume", ambient.value);
+        PlayerPrefs.Save();
     }
 
     public void SetMusicSound()
     {
         audioMixer.SetFloat("Music", music.value);
-        float percentage = ((-80.0f - music.value) / (-80.0f - 20.0f)) * 100;
+        float percentage = ((-80.0f - music.value) / (-80.0f)) * 100;
         musicText.text = percentage.ToString();
+        PlayerPrefs.SetFloat("musicVolume", music.value);
+        PlayerPrefs.Save();
     }
 
     public void SetPlayerSound()
     {
         audioMixer.SetFloat("Player", player.value);
-        float percentage = ((-80.0f - player.value) / (-80.0f - 20.0f)) * 100;
+        float percentage = ((-80.0f - player.value) / (-80.0f)) * 100;
         playerText.text = percentage.ToString();
+        PlayerPrefs.SetFloat("playerVolume", player.value);
+        PlayerPrefs.Save();//How can we make this better?
     }
 
     public void SetStartingValues()
@@ -57,27 +65,32 @@ public class AudioController : MonoBehaviour
         int wholeNum = 0;
 
 
-        audioMixer.GetFloat("Master", out value);
+        value = PlayerPrefs.GetFloat("masterVolume");
+        audioMixer.SetFloat("Master", value);
         master.value = value;
-        percentage = ((-80.0f - value) / (-80.0f - 20.0f)) * 100;
+        percentage = ((-80.0f - value) / (-80.0f)) * 100;
         wholeNum = (int)percentage;
         masterText.text = wholeNum.ToString();
 
-        audioMixer.GetFloat("AmbientSound", out value);
+        value = PlayerPrefs.GetFloat("ambientVolume");
+        audioMixer.SetFloat("AmbientSound", value);
         ambient.value = value;  
-        percentage = ((-80.0f - value) / (-80.0f - 20.0f)) * 100;
+        percentage = ((-80.0f - value) / (-80.0f)) * 100;
         wholeNum = (int)percentage;
         ambientText.text = wholeNum.ToString();
 
-        audioMixer.GetFloat("Music", out value);
+        value = PlayerPrefs.GetFloat("musicVolume");
+        audioMixer.SetFloat("Music", value);
         music.value = value;
-        percentage = ((-80.0f - value) / (-80.0f - 20.0f)) * 100;
+        percentage = ((-80.0f - value) / (-80.0f)) * 100;
         wholeNum = (int)percentage;
         musicText.text = wholeNum.ToString();
 
-        audioMixer.GetFloat("Player", out value);
+        //audioMixer.GetFloat("Player", out value);
+        value = PlayerPrefs.GetFloat("playerVolume");
+        audioMixer.SetFloat("Player", value);
         player.value = value;
-        percentage = ((-80.0f - value) / (-80.0f - 20.0f)) * 100;
+        percentage = ((-80.0f - value) / (-80.0f)) * 100;
         wholeNum = (int)percentage;
         playerText.text = wholeNum.ToString();
     }

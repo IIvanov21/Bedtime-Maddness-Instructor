@@ -81,7 +81,7 @@ public class LevelUI : MonoBehaviour
             AudioListener.pause = false;
         }
 
-        CursorManager.cursorDelegate?.Invoke(isPaused);
+        CursorManager.cursorDelegate?.Invoke(!isPaused);
 
         
     }

@@ -9,7 +9,7 @@ public class ScoreManager : MonoBehaviour
     public int PlayerScore
     {
         get { return playerScore; }
-        private set { playerScore = value; }
+        set { playerScore = value; }
     }
 
 

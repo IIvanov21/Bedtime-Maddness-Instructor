@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour
 
     public static int playerHealth=0;
 
-    
-
+    public static bool loadLevel = false;
+    public static Vector3 loadPosition=Vector3.zero;
     private static GameState state = GameState.None;
     public static GameState State
     {
@@ -44,10 +44,13 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Debug.Log("Level: " + currentScene);
     }
 
-   
+    private void Update()
+    {
+        
+    }
 
     //Camera settings
     void CameraSetup()
