@@ -25,7 +25,10 @@ public class GameManager : MonoBehaviour
     public static int playerHealth=0;
 
     public static bool loadLevel = false;
-    public static Vector3 loadPosition=Vector3.zero;
+    public static Vector3 playerPosition=Vector3.zero;
+    public static Vector3 loadPosition = Vector3.zero;
+
+
     private static GameState state = GameState.None;
     public static GameState State
     {

@@ -50,6 +50,8 @@ public class Player : MonoBehaviour, IActorTemplate
     {
         if (GameManager.State == GameState.Play)
         {
+            //Keep track of player position
+            PlayerPositionUpdate();
             //Movement
             Move();
             ControlParticleSystems();
@@ -58,6 +60,11 @@ public class Player : MonoBehaviour, IActorTemplate
             //Simple Jump - needs checks for multiple presses
             Jump();
         }
+    }
+
+    void PlayerPositionUpdate()
+    {
+        GameManager.playerPosition = transform.position;
     }
 
     public void ActorStats(SOActorModel actorModel)

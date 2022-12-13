@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 526465689503829836}
   - component: {fileID: 3076323561305331737}
   m_Layer: 0
-  m_Name: SmallTeddyBearEnemy
+  m_Name: BigTeddyBear
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6ee6561ebf75a4b15857523107eae6bd, type: 2}
+  - {fileID: 2100000, guid: af75c1831bd8055488984118079ba11d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,6 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e86bbc8b095217f46ba9fa4b01d5b5f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceToPatrolPoint: 0
+  startingPos: {x: 0, y: 0, z: 0}
+  patrolSwitch: 1
+  minDistanceToPlayer: 2
 --- !u!54 &7384225359758490715
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -143,7 +147,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

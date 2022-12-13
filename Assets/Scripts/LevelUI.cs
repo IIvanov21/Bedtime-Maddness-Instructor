@@ -49,7 +49,7 @@ public class LevelUI : MonoBehaviour
         {
             Debug.Log("Player's current suffocation is:" + GameManager.playerHealth + "%! We are dead!");
             playerHealthSlider.value = GameManager.playerHealth;
-            GetComponent<ScenesManager>().GameOver();
+            GameManager.Instance.GetComponent<ScenesManager>().GameOver();
 
         }
 

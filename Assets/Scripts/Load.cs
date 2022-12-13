@@ -18,6 +18,8 @@ public class Load : MonoBehaviour
             player.Health = loadStructure.health;
             player.gameObject.transform.localPosition = GameManager.loadPosition;
             player.gameObject.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
+            LevelUI.onLifeUpdate?.Invoke();
+            LevelUI.onScoreUpdate?.Invoke();
             GameManager.loadLevel = false;
 
         }
