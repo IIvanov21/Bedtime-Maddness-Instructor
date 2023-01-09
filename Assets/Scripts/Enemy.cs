@@ -84,6 +84,7 @@ public class Enemy : MonoBehaviour, IActorTemplate
     public void TakeDamage(int incomingDamage)
     {
         health -= incomingDamage;
+        
     }
 
     void OnTriggerEnter(Collider collider)
@@ -146,7 +147,7 @@ public class Enemy : MonoBehaviour, IActorTemplate
 
         distanceToPlayer = Vector3.Distance(transform.position, GameManager.playerPosition);
 
-     
+       
         if (distanceToPlayer < minDistanceToPlayer)
         {
             agent.destination = GameManager.playerPosition;
