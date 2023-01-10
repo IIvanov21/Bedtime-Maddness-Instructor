@@ -28,6 +28,12 @@ public class Enemy : MonoBehaviour, IActorTemplate
     [SerializeField]
     private float minDistanceToPlayer = 2.0f;
 
+    //Boss values
+    [SerializeField]
+    Transform shootPosition;
+    GameObject bullet;
+    bool shoot=true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,8 +62,14 @@ public class Enemy : MonoBehaviour, IActorTemplate
                 LookingAtPlayer();
 
                 if (patrol) Patrol();
-                else Chase();              
-                
+                else Chase();
+
+            }
+            else if (actorType == SOActorModel.ActorType.BossTeddyBear)
+            {
+                Chase();
+
+                if(agent.stoppingDistance<=3.0f)Fire();
             }
         }
     }
@@ -69,11 +81,17 @@ public class Enemy : MonoBehaviour, IActorTemplate
         hitPower = actorModel.hitPower;
         score=actorModel.score;
         actorType = actorModel.actorType;
+        bullet = actorModel.actorBullets;
     }
 
     public void Die()
     {
         Destroy(gameObject);
+        
+        if (actorType == SOActorModel.ActorType.BossTeddyBear)
+        {
+            GameManager.Instance.GetComponent<ScenesManager>().GameOver(); 
+        }
     }
 
     public int SendDamage()
@@ -153,5 +171,19 @@ public class Enemy : MonoBehaviour, IActorTemplate
             agent.destination = GameManager.playerPosition;
             distanceToPlayer = Vector3.Distance(transform.position, GameManager.playerPosition);
         }
+    }
+
+    void Fire()
+    {
+        if (shoot) StartCoroutine(CreateBullet());
+    }
+
+    IEnumerator CreateBullet()
+    {
+
+        Instantiate(bullet, shootPosition.position, shootPosition.rotation);
+        shoot = false;
+        yield return new WaitForSeconds(2.0f);
+        shoot = true;
     }
 }
