@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+
+
 public class Enemy : MonoBehaviour, IActorTemplate
 {
     int health;
@@ -9,16 +11,9 @@ public class Enemy : MonoBehaviour, IActorTemplate
     int hitPower;
     int score;
     SOActorModel.ActorType actorType;
-    NavMeshAgent agent;
+    [SerializeField]protected NavMeshAgent agent;
 
-    //Patrol variables
-    private float distanceToPatrolPoint;
-    private Vector3 startingPos;
-    bool patrol=true;
-    bool patrolSwitch = true;
-
-    GameObject[] patrolPoints;
-    GameObject patrolPoint;
+    
     //Chase variables
     private float distanceToPlayer;
 
@@ -28,50 +23,21 @@ public class Enemy : MonoBehaviour, IActorTemplate
     [SerializeField]
     private float minDistanceToPlayer = 2.0f;
 
-    //Boss values
-    [SerializeField]
-    Transform shootPosition;
-    GameObject bullet;
-    bool shoot=true;
+    protected GameObject bullet;
+
 
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
-        startingPos = transform.position;
-
-        //Setup patrol points 
-
-        //Get a random patrol point
-        patrolPoints = GameObject.FindGameObjectsWithTag("PatrolPoint");
-        patrolPoint = patrolPoints[Random.Range(0, patrolPoints.Length - 1)];
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.State == GameState.Play)
-        {
-            if (actorType == SOActorModel.ActorType.SmallTeddyBear)
-            {
-                agent.destination = GameManager.playerPosition;
-            }
-            else if (actorType == SOActorModel.ActorType.BigTeddyBear)
-            {
-                LookingAtPlayer();
-
-                if (patrol) Patrol();
-                else Chase();
-
-            }
-            else if (actorType == SOActorModel.ActorType.BossTeddyBear)
-            {
-                Chase();
-
-                if(agent.stoppingDistance<=3.0f)Fire();
-            }
-        }
+        
     }
 
     public void ActorStats(SOActorModel actorModel)
@@ -114,12 +80,11 @@ public class Enemy : MonoBehaviour, IActorTemplate
 
             GameManager.Instance.GetComponent<ScoreManager>().SetScore(score);
             Debug.Log("Player's Score: " + GameManager.Instance.GetComponent<ScoreManager>().PlayerScore);
-            //GameManager.Instance.ScoreSystem();
             LevelUI.onScoreUpdate?.Invoke();
         }
     }
 
-    void LookingAtPlayer()
+    public bool LookingAtPlayer()
     {
         directionToPlayer = transform.position - GameManager.playerPosition;
         angel = Vector3.Angle(transform.forward, directionToPlayer);
@@ -128,9 +93,9 @@ public class Enemy : MonoBehaviour, IActorTemplate
 
         if (distanceToPlayer < minDistanceToPlayer && FacingPlayer())
         {
-            patrol = false;
+            return false;
         }
-        else patrol = true;
+        else return true;
     }
 
     bool FacingPlayer()
@@ -139,28 +104,11 @@ public class Enemy : MonoBehaviour, IActorTemplate
         else return false;
     }
 
-    void Patrol()
-    {
-       
+    
 
-        //Calculate distance
-        if (patrolSwitch)
-        {
-            distanceToPatrolPoint = Vector3.Distance(transform.position, patrolPoint.transform.position);
-            agent.destination=patrolPoint.transform.position;
-            if (distanceToPatrolPoint < agent.stoppingDistance) patrolSwitch = false;
-        }
-        else
-        {
-            distanceToPatrolPoint = Vector3.Distance(transform.position, startingPos);
-            agent.destination = startingPos;
-            if (distanceToPatrolPoint < agent.stoppingDistance) patrolSwitch = true;
-        }
-        
-    }
-
-    void Chase()
+    public void Chase()
     {
+        Debug.Log(agent);
         agent.destination = GameManager.playerPosition;
 
         distanceToPlayer = Vector3.Distance(transform.position, GameManager.playerPosition);
@@ -173,17 +121,5 @@ public class Enemy : MonoBehaviour, IActorTemplate
         }
     }
 
-    void Fire()
-    {
-        if (shoot) StartCoroutine(CreateBullet());
-    }
-
-    IEnumerator CreateBullet()
-    {
-
-        Instantiate(bullet, shootPosition.position, shootPosition.rotation);
-        shoot = false;
-        yield return new WaitForSeconds(2.0f);
-        shoot = true;
-    }
+    
 }

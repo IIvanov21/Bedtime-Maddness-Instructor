@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5897093204941858795}
   - component: {fileID: 7786579346713854386}
   - component: {fileID: 5480868803080716790}
-  - component: {fileID: 2071826500670956323}
   - component: {fileID: 7384225359758490715}
   - component: {fileID: 526465689503829836}
   - component: {fileID: 3076323561305331737}
+  - component: {fileID: -1459512376404502853}
   m_Layer: 0
   m_Name: BigTeddyBear
   m_TagString: Enemy
@@ -88,22 +88,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2071826500670956323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4348480731891080740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e86bbc8b095217f46ba9fa4b01d5b5f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceToPatrolPoint: 0
-  startingPos: {x: 0, y: 0, z: 0}
-  patrolSwitch: 1
-  minDistanceToPlayer: 2
 --- !u!54 &7384225359758490715
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -155,6 +139,20 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-1459512376404502853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4348480731891080740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a762fb834dcb40b4494a223622eae0d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 3076323561305331737}
+  minDistanceToPlayer: 2
 --- !u!1 &8403298597627925562
 GameObject:
   m_ObjectHideFlags: 0

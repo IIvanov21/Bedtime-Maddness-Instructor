@@ -122,9 +122,9 @@ GameObject:
   - component: {fileID: 5255862339070556628}
   - component: {fileID: 2844310404130287997}
   - component: {fileID: 7604706342645265692}
-  - component: {fileID: 7041449519290330516}
   - component: {fileID: -6070910533469780320}
   - component: {fileID: -2639929370332362632}
+  - component: {fileID: 8146682359613418562}
   m_Layer: 0
   m_Name: EnemyBoss
   m_TagString: Untagged
@@ -212,20 +212,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7041449519290330516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3364131332296761752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e86bbc8b095217f46ba9fa4b01d5b5f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minDistanceToPlayer: 2
-  shootPosition: {fileID: 6642519071933982265}
 --- !u!54 &-6070910533469780320
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -264,3 +250,18 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &8146682359613418562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3364131332296761752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b7a9d7334812be44a465dc5fb9a7996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: -2639929370332362632}
+  minDistanceToPlayer: 2
+  shootPosition: {fileID: 6642519071933982265}
