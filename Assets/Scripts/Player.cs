@@ -40,10 +40,12 @@ public class Player : MonoBehaviour, IActorTemplate
     float horizontalInput;
     float verticalInput;
 
+
     void Start()
     {
         _Player = GameObject.Find("_Player");
         rb = GetComponent<Rigidbody>();
+
     }
 
     void Update()
@@ -53,12 +55,12 @@ public class Player : MonoBehaviour, IActorTemplate
             //Keep track of player position
             PlayerPositionUpdate();
             //Movement
-            Move();
+            //Move();
             ControlParticleSystems();
             //Attack
             Attack();
             //Simple Jump - needs checks for multiple presses
-            Jump();
+            //Jump();
         }
     }
 
@@ -76,15 +78,24 @@ public class Player : MonoBehaviour, IActorTemplate
         fire = actorModel.actorBullets;
     }
 
-    void OnTriggerEnter(Collider collider)
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Hit by the enemy!");
+
+        }
+    }
+
+    void OnControllerColliderHitEnter(ControllerColliderHit hit)
     {
         //If we collide with Enemy
-        if (collider.CompareTag("Enemy"))
+        if (hit.gameObject.CompareTag("Enemy"))
         {
             //if our health is above 0
             if (health < 100)//Reduce health based on damage from the actor
             {
-                health += collider.GetComponent<IActorTemplate>().SendDamage();
+                health += hit.gameObject.GetComponent<IActorTemplate>().SendDamage();
                 GameManager.playerHealth = health;
                 //GameManager.Instance.LifeSystemTracker();
                 LevelUI.onLifeUpdate?.Invoke();

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 526465689503829836}
   - component: {fileID: 3076323561305331737}
   - component: {fileID: 4450773032682624198}
+  - component: {fileID: 8133471365473858928}
   m_Layer: 0
   m_Name: SmallTeddyBearEnemy
   m_TagString: Enemy
@@ -153,6 +154,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 3076323561305331737}
   minDistanceToPlayer: 2
+--- !u!135 &8133471365473858928
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4348480731891080740}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8403298597627925562
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8424447709105465395}
   - component: {fileID: 9008599270234708763}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Minimap
   m_TagString: Untagged
   m_Icon: {fileID: 0}

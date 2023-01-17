@@ -79,7 +79,7 @@ public class Enemy : MonoBehaviour, IActorTemplate
             if (health <= 0) Die();
 
             GameManager.Instance.GetComponent<ScoreManager>().SetScore(score);
-            Debug.Log("Player's Score: " + GameManager.Instance.GetComponent<ScoreManager>().PlayerScore);
+            //Debug.Log("Player's Score: " + GameManager.Instance.GetComponent<ScoreManager>().PlayerScore);
             LevelUI.onScoreUpdate?.Invoke();
         }
     }
@@ -88,7 +88,7 @@ public class Enemy : MonoBehaviour, IActorTemplate
     {
         directionToPlayer = transform.position - GameManager.playerPosition;
         angel = Vector3.Angle(transform.forward, directionToPlayer);
-        Debug.Log("Angle: " + angel);
+        //Debug.Log("Angle: " + angel);
         distanceToPlayer = Vector3.Distance(transform.position, GameManager.playerPosition) ;
 
         if (distanceToPlayer < minDistanceToPlayer && FacingPlayer())
@@ -108,7 +108,7 @@ public class Enemy : MonoBehaviour, IActorTemplate
 
     public void Chase()
     {
-        Debug.Log(agent);
+        //Debug.Log(agent);
         agent.destination = GameManager.playerPosition;
 
         distanceToPlayer = Vector3.Distance(transform.position, GameManager.playerPosition);

@@ -66,7 +66,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1129,7 +1129,7 @@ GameObject:
   - component: {fileID: 6925808486687769180}
   - component: {fileID: 4941604082088928943}
   - component: {fileID: 2729625143856597062}
-  - component: {fileID: 248102598}
+  - component: {fileID: 2593249587735726760}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -1194,22 +1194,21 @@ MonoBehaviour:
   PlayerSpeed: 5
   RunningSpeed: 7
   JumpSpeed: 5
---- !u!54 &248102598
-Rigidbody:
+--- !u!114 &2593249587735726760
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4206809875157627283}
-  serializedVersion: 2
-  m_Mass: 25
-  m_Drag: 5
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0eec58a43719a4a8590d8b31439136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootPoint: {fileID: 7581017666204841878}
+  particleSystem: {fileID: 9156208263416041909}
+  jumpFactor: 0
 --- !u!1 &4640859325056739175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,7 +1219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4171848510038333530}
   - component: {fileID: 5535536048295389322}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: MinimapObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1390,7 +1389,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1184772531865339946}
   - component: {fileID: 6217511029407950282}
-  m_Layer: 0
+  - component: {fileID: 2466861583045351347}
+  m_Layer: 6
   m_Name: Minimap Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1455,6 +1455,39 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &2466861583045351347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6068019801540073573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &6510391965056895570
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,6 +2060,12 @@ PrefabInstance:
 --- !u!4 &9052297841202558993 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000014129045996, guid: 78b71003e8b357d4bbf89c8b5e5e4f0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 9056190268237928957}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &9156208263416041909 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198000012368742472, guid: 78b71003e8b357d4bbf89c8b5e5e4f0e,
     type: 3}
   m_PrefabInstance: {fileID: 9056190268237928957}
   m_PrefabAsset: {fileID: 0}
