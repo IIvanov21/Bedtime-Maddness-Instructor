@@ -71,11 +71,11 @@ public class Enemy : MonoBehaviour, IActorTemplate
         
     }
 
-    void OnTriggerEnter(Collider collider)
+    void OnCollisionEnter(Collision collider)
     {
-        if (collider.CompareTag("Player") || collider.CompareTag("Bullet"))
+        if (collider.gameObject.CompareTag("Player") || collider.gameObject.CompareTag("Bullet"))
         {
-            if (health >= 1) health -= collider.GetComponent<IActorTemplate>().SendDamage();
+            if (health >= 1) health -= collider.gameObject.GetComponent<IActorTemplate>().SendDamage();
             if (health <= 0) Die();
 
             GameManager.Instance.GetComponent<ScoreManager>().SetScore(score);

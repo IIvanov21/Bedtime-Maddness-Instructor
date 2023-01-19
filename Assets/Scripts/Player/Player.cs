@@ -82,13 +82,15 @@ public class Player : MonoBehaviour, IActorTemplate
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Hit by the enemy!");
+            Debug.Log("Hit by the enemy from Collision Enter!");
 
         }
     }
 
     void OnControllerColliderHitEnter(ControllerColliderHit hit)
     {
+        Debug.Log("Hit by the enemy from Collider Hit!");
+
         //If we collide with Enemy
         if (hit.gameObject.CompareTag("Enemy"))
         {
